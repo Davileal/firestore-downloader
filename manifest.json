@@ -1,0 +1,17 @@
+{
+  "name": "Firestore Downloader",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Download the currently selected Firestore document as JSON directly from the Firebase console with a single click.",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "images/icon.png"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["https://console.firebase.google.com/*"],
+      "js": ["scripts/contentScript.js"]
+    }
+  ]
+}
