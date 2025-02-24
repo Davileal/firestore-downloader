@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Firestore JSON Downloader</title>
+    <style>
+      /* Basic reset and layout */
+      body {
+        margin: 0;
+        padding: 0;
+        width: 300px; /* Popup width */
+        min-height: 160px; /* A bit of height so things look spaced out */
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        color: #333;
+      }
+
+      /* Header styling */
+      header {
+        background: #0d46a1;
+        color: #fff;
+        padding: 12px;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      /* Main content styling */
+      main {
+        display: grid;
+        padding: 12px;
+      }
+      main p {
+        margin: 0 0 10px 0;
+        line-height: 1.4em;
+      }
+
+      /* Button styling */
+      button {
+        margin: auto;
+        background: #0d46a1;
+        color: #fff;
+        border: none;
+        font-size: 14px;
+        padding: 10px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #053889;
+      }
+
+      /* Status message area */
+      .status {
+        margin-top: 12px;
+        padding: 8px;
+        border-radius: 4px;
+        font-weight: bold;
+        display: none; /* hidden until we set a status */
+      }
+      .status.show {
+        display: block; /* show when we add 'show' class */
+      }
+
+      /* Success / error colors */
+      .success {
+        background-color: #e8f5e9;
+        color: #4caf50;
+      }
+      .error {
+        background-color: #ffebee;
+        color: #f44336;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Firestore JSON Downloader</h1>
+    </header>
+
+    <main>
+      <p>
+        Click the button below to download the current Firestore document as
+        JSON.
+      </p>
+      <button id="download-json">Download JSON</button>
+
+      <!-- Status message will be updated by popup.js -->
+      <div class="status" id="status"></div>
+    </main>
+
+    <!-- Include your popup.js -->
+    <script src="popup.js"></script>
+  </body>
+</html>
