@@ -20,8 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
           fetchedJsonString = response.data;
           // Display in the <pre> area
           jsonContent.textContent = fetchedJsonString;
-          statusDiv.textContent = "JSON loaded successfully!";
-          statusDiv.className = 'status show success';
         } else {
           // Some error or missing data
           statusDiv.textContent = `Error: ${response.message || 'Unknown error'}`;
@@ -55,8 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
 
-      statusDiv.textContent = "File downloaded successfully!";
-      statusDiv.className = 'status show success';
     } catch (err) {
       console.error("Download error:", err);
       statusDiv.textContent = "Error: Could not download the JSON file.";
